@@ -5,3 +5,6 @@ This is for beginners to start studying provider, bloc pattern<br>
 <br><br><br>
 <h2> FirstScreen </h2>
 The simple counter screen using provider
+<br>
+<h2> SecondScreen </h2>
+The MultiProvider example
