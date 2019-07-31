@@ -6,7 +6,8 @@ class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final counterModel = Provider.of<CounterModel>(context);
-    // final nameModel = Provider.of<NameModel>(context);
+    final nameModel = Provider.of<NameModel>(context);
+    String name;
     return Scaffold(
       appBar: AppBar(
         title: Text("Provider Demo"),
@@ -16,20 +17,22 @@ class SecondScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text('Counter Value is: ${counterModel.getCounter()}'),
-            // Text('Name is : ${nameModel.getName()}'),
-            SizedBox(
+            Text('Name is : ${nameModel.getName()}'),
+            Container(
+              margin: EdgeInsets.only(right: 50,left:50),
               child: TextField(
+                textAlign: TextAlign.center,
+                onChanged: (str){
+                  name=str;
+                },
                 decoration: InputDecoration(
-                  hintText: 'hi'
+                  hintText: 'Put in your name'
                 ),
               ),
             ),
-            
             RaisedButton(
-              child: Text('Next example'),
-              onPressed: () {
-                Navigator.pushNamed(context, '/');
-              },
+              child: Text('Save name'),
+              onPressed: () => nameModel.setName(name),
             ),
           ],
         ),
