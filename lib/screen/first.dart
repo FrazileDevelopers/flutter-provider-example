@@ -17,6 +17,12 @@ class FirstScreen extends StatelessWidget {
               'Counter Value is: ${counterModel.getCounter()}',
               style: Theme.of(context).textTheme.display1,
             ),
+            RaisedButton(
+              child: Text('Next example'),
+              onPressed: () {
+                Navigator.pushNamed(context, '/second');
+              },
+            ),
           ],
         ),
       ),
@@ -24,16 +30,19 @@ class FirstScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
           FloatingActionButton(
+            heroTag: "btn1",
             onPressed: () => counterModel.incrementCounter(),
             tooltip: 'Increment',
             child: Icon(Icons.add),
           ),
           SizedBox(width: 30),
           FloatingActionButton(
+            heroTag: "btn2",
             onPressed: () => counterModel.decrementCounter(),
             tooltip: 'Decrement',
             child: Icon(Icons.remove),
           ),
+          
         ],
       ),
     );
