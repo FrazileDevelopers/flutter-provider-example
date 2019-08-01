@@ -11,7 +11,7 @@ class SecondScreen extends StatelessWidget {
     String name;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Provider Demo"),
+        title: Text("Provider & Bloc example"),
       ),
       body: Center(
         child: Column(
@@ -35,6 +35,12 @@ class SecondScreen extends StatelessWidget {
             RaisedButton(
               child: Text('Save name'),
               onPressed: () => nameModel.setName(name),
+            ),
+            RaisedButton(
+              child: Text('Next example(Third)'),
+              onPressed: () {
+                Navigator.pushNamed(context, '/third');
+              },
             ),
           ],
         ),

@@ -7,7 +7,7 @@ class FirstScreen extends StatelessWidget {
     final counterModel = Provider.of<CounterModel>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text("Provider Demo"),
+        title: Text("Provider & Bloc example"),
       ),
       body: Center(
         child: Column(
@@ -18,7 +18,7 @@ class FirstScreen extends StatelessWidget {
               style: Theme.of(context).textTheme.display1,
             ),
             RaisedButton(
-              child: Text('Next example'),
+              child: Text('Next example (second)'),
               onPressed: () {
                 Navigator.pushNamed(context, '/second');
               },

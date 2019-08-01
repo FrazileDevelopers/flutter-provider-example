@@ -4,7 +4,7 @@ import '../model/counter.dart';
 class SecondSub extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final counterModel = Provider.of<CounterModel>(context);
+    final counterModel = Provider.of<CounterModel>(context,listen:false);
     return Text('SecondSub Counter Value is: ${counterModel.getCounter()}');
   }
 }

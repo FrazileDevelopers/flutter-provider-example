@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'model/counter.dart';
 import 'model/name.dart';
+import 'model/account.dart';
 import 'screen/first.dart';
 import 'screen/second.dart';
+import 'screen/third.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -15,6 +17,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider<CounterModel>(builder: (_)=>CounterModel()),
         ChangeNotifierProvider<NameModel>(builder: (_)=>NameModel()),
+        ChangeNotifierProvider<AccountModel>(builder: (_)=>AccountModel()),
       ],
       child: MaterialApp(
         title: 'Provider & Bloc example',
@@ -25,6 +28,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/':(context)=> FirstScreen(),
           '/second':(context)=>SecondScreen(),
+          '/third':(context)=>Third(),
         },
       ),
     );
