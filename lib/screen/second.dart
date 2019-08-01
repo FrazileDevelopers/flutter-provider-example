@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../model/counter.dart';
 import '../model/name.dart';
+import './second_sub.dart';
 class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,8 @@ class SecondScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text('Counter Value is: ${counterModel.getCounter()}'),
+            SecondSub(), //This is sub widget
+            Text('Counter Value is: ${counterModel.getCounter()}'),   // Also, it is not necessary to separate like SecondSub()
             Text('Name is : ${nameModel.getName()}'),
             Container(
               margin: EdgeInsets.only(right: 50,left:50),
