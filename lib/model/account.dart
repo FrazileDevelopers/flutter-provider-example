@@ -19,7 +19,7 @@ class AccountModel with ChangeNotifier {
     var response = await http.get(url);
     if (response.statusCode == 200) {
       var jsonResponse = convert.jsonDecode(response.body)['items'];
-      jsonResponse.map((i)=>_accountList.add(AccountJson.fromJson(i))).toList();
+      jsonResponse.map((i)=>_accountList.add(Account.fromJson(i))).toList();
       _isLoading = false;
     } else {
       print("Request failed with status: ${response.statusCode}.");
@@ -36,18 +36,18 @@ class AccountModel with ChangeNotifier {
   }
 }
 
-class AccountJson{
+class Account{
   final String name, description, avatar;
   final int star;
-  AccountJson({
+  Account({
     this.name,
     this.description,
     this.star,
     this.avatar
   });
 
-  factory AccountJson.fromJson(Map<String, dynamic> json){
-    return new AccountJson(
+  factory Account.fromJson(Map<String, dynamic> json){
+    return new Account(
       name: json['name'],
       description: json['description'],
       star : json['stargazers_count'],

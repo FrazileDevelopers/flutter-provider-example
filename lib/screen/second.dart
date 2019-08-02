@@ -36,11 +36,22 @@ class SecondScreen extends StatelessWidget {
               child: Text('Save name'),
               onPressed: () => nameModel.setName(name),
             ),
-            RaisedButton(
-              child: Text('Next example(Third)'),
-              onPressed: () {
-                Navigator.pushNamed(context, '/third');
-              },
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                RaisedButton(
+                  child: Text('Next example(Third)'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/third');
+                  },
+                ),
+                RaisedButton(
+                  child: Text('Next example(Fourth)'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/fourth');
+                  },
+                ),
+              ],
             ),
           ],
         ),

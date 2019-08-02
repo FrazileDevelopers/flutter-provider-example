@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../model/account.dart';
 
-class Third extends StatelessWidget {
+class ThirdScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var accountModel = Provider.of<AccountModel>(context);
@@ -61,6 +61,7 @@ class Third extends StatelessWidget {
             ),
           ),
           _loader(context,accountModel),
+          
         ],
       ),
     );
