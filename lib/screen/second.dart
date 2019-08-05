@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../model/counter.dart';
-import '../model/name.dart';
+import '../bloc/counter.dart';
+import '../bloc/name.dart';
 import './second_sub.dart';
 class SecondScreen extends StatelessWidget {
   @override

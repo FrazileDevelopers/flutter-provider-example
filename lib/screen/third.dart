@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../model/account.dart';
+import '../bloc/account.dart';
 
 class ThirdScreen extends StatelessWidget {
   @override
