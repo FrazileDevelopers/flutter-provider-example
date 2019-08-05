@@ -45,12 +45,12 @@ class SecondScreen extends StatelessWidget {
                     Navigator.pushNamed(context, '/third');
                   },
                 ),
-                // RaisedButton(
-                //   child: Text('Next example(Fourth)'),
-                //   onPressed: () {
-                //     Navigator.pushNamed(context, '/fourth');
-                //   },
-                // ),
+                RaisedButton(
+                  child: Text('Next example(Fourth)'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/fourth');
+                  },
+                ),
               ],
             ),
           ],
