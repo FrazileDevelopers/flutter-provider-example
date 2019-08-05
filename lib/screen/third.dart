@@ -5,7 +5,7 @@ import '../model/account.dart';
 class ThirdScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var accountModel = Provider.of<AccountModel>(context);
+    var accountBloc = Provider.of<AccountBloc>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text("Provider & Bloc example"),
@@ -16,33 +16,33 @@ class ThirdScreen extends StatelessWidget {
             child: NotificationListener<ScrollNotification>(
               onNotification: (ScrollNotification scrollInfo) {
                 if (scrollInfo.metrics.pixels == scrollInfo.metrics.maxScrollExtent) {
-                  if (!accountModel.getLoading()) {
-                    accountModel.setPage(accountModel.getPage() + 1);
-                    accountModel.setLoading();
-                    accountModel.getResponse(accountModel.getPage());
+                  if (!accountBloc.getLoading()) {
+                    accountBloc.setPage(accountBloc.getPage() + 1);
+                    accountBloc.setLoading();
+                    accountBloc.getResponse(accountBloc.getPage());
                     return true;
                   }
                 }
                 return false;
               },
               child: ListView.builder(
-                itemCount: accountModel.getList().length,
+                itemCount: accountBloc.getList().length,
                 itemBuilder: (BuildContext context, int index) {
                   return Card(
                     child: ListTile(
                         leading:
-                            Image.network(accountModel.getList()[index].avatar),
+                            Image.network(accountBloc.getList()[index].avatar),
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             Expanded(
                               child:
-                                  Text('${accountModel.getList()[index].name}'),
+                                  Text('${accountBloc.getList()[index].name}'),
                             ),
                             Row(
                               children: <Widget>[
                                 Icon(Icons.star),
-                                Text('${accountModel.getList()[index].star}'),
+                                Text('${accountBloc.getList()[index].star}'),
                               ],
                             )
                           ],
@@ -51,7 +51,7 @@ class ThirdScreen extends StatelessWidget {
                           children: <Widget>[
                             Expanded(
                               child: Text(
-                                  '${accountModel.getList()[index].description}'),
+                                  '${accountBloc.getList()[index].description}'),
                             )
                           ],
                         )),
@@ -60,7 +60,7 @@ class ThirdScreen extends StatelessWidget {
               ),
             ),
           ),
-          _loader(context,accountModel),
+          _loader(context,accountBloc),
           
         ],
       ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
-class AccountModel with ChangeNotifier {
+class AccountBloc with ChangeNotifier {
   var _accountList = [];
   var _isLoading = false;
   var _page = 1;
@@ -10,12 +10,12 @@ class AccountModel with ChangeNotifier {
   getList() => _accountList;
   getPage() => _page;
 
-  AccountModel(){
+  AccountBloc(){
     getResponse(_page);
   }
 
   getResponse(page) async{
-    var url = "https://api.github.com/search/repositories?q=flutter&page=${page}&per_page=10";  
+    var url = "https://api.github.com/search/repositories?q=flutter&page=${page}&per_page=20";  
     var response = await http.get(url);
     if (response.statusCode == 200) {
       var jsonResponse = convert.jsonDecode(response.body)['items'];
@@ -23,6 +23,7 @@ class AccountModel with ChangeNotifier {
       _isLoading = false;
     } else {
       print("Request failed with status: ${response.statusCode}.");
+      _isLoading = false;
     }
     notifyListeners();
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CounterModel with ChangeNotifier {
+class CounterBloc with ChangeNotifier {
   int _counter = 0;
 
   getCounter() => _counter;

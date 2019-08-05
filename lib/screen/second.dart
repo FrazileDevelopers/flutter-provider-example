@@ -6,8 +6,8 @@ import './second_sub.dart';
 class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final counterModel = Provider.of<CounterModel>(context);
-    final nameModel = Provider.of<NameModel>(context);
+    final counterBloc = Provider.of<CounterBloc>(context);
+    final nameBloc = Provider.of<NameBloc>(context);
     String name;
     return Scaffold(
       appBar: AppBar(
@@ -18,8 +18,8 @@ class SecondScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             SecondSub(), //This is sub widget
-            Text('Counter Value is: ${counterModel.getCounter()}'),   // Also, it is not necessary to separate like SecondSub()
-            Text('Name is : ${nameModel.getName()}'),
+            Text('Counter Value is: ${counterBloc.getCounter()}'),   // Also, it is not necessary to separate like SecondSub()
+            Text('Name is : ${nameBloc.getName()}'),
             Container(
               margin: EdgeInsets.only(right: 50,left:50),
               child: TextField(
@@ -34,7 +34,7 @@ class SecondScreen extends StatelessWidget {
             ),
             RaisedButton(
               child: Text('Save name'),
-              onPressed: () => nameModel.setName(name),
+              onPressed: () => nameBloc.setName(name),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -45,12 +45,12 @@ class SecondScreen extends StatelessWidget {
                     Navigator.pushNamed(context, '/third');
                   },
                 ),
-                RaisedButton(
-                  child: Text('Next example(Fourth)'),
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/fourth');
-                  },
-                ),
+                // RaisedButton(
+                //   child: Text('Next example(Fourth)'),
+                //   onPressed: () {
+                //     Navigator.pushNamed(context, '/fourth');
+                //   },
+                // ),
               ],
             ),
           ],

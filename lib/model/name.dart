@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class NameModel with ChangeNotifier {
+class NameBloc with ChangeNotifier {
   String _name = 'Tyson';
 
   getName() => _name;

@@ -3,11 +3,10 @@ import 'package:provider/provider.dart';
 import 'model/counter.dart';
 import 'model/name.dart';
 import 'model/account.dart';
-import 'model/counter_stream.dart';
 import 'screen/first.dart';
 import 'screen/second.dart';
 import 'screen/third.dart';
-import 'screen/fourth.dart';
+// import 'screen/fourth.dart';
 import 'dart:async';
 void main() => runApp(MyApp());
 
@@ -18,10 +17,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider<CounterModel>(builder: (_)=>CounterModel()),
-        ChangeNotifierProvider<NameModel>(builder: (_)=>NameModel()),
-        ChangeNotifierProvider<AccountModel>(builder: (_)=>AccountModel()),
-        StreamProvider<CounterStreamModel>(builder: (_)=>CounterStreamModel().stream)
+        ChangeNotifierProvider<CounterBloc>(builder: (_)=>CounterBloc()),
+        ChangeNotifierProvider<NameBloc>(builder: (_)=>NameBloc()),
+        ChangeNotifierProvider<AccountBloc>(builder: (_)=>AccountBloc()),
       ],
       child: MaterialApp(
         title: 'Provider & Bloc example',
@@ -33,7 +31,7 @@ class MyApp extends StatelessWidget {
           '/':(context)=> FirstScreen(),
           '/second':(context)=>SecondScreen(),
           '/third':(context)=>ThirdScreen(),
-          '/fourth':(context)=>FourthScreen(),
+          // '/fourth':(context)=>FourthScreen(),
         },
       ),
     );

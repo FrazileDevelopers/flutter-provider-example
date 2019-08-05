@@ -4,7 +4,7 @@ import '../model/counter.dart';
 class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final counterModel = Provider.of<CounterModel>(context);
+    final counterBloc = Provider.of<CounterBloc>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text("Provider & Bloc example"),
@@ -14,7 +14,7 @@ class FirstScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'Counter Value is: ${counterModel.getCounter()}',
+              'Counter Value is: ${counterBloc.getCounter()}',
               style: Theme.of(context).textTheme.display1,
             ),
             RaisedButton(
@@ -31,14 +31,14 @@ class FirstScreen extends StatelessWidget {
         children: <Widget>[
           FloatingActionButton(
             heroTag: "btn1",
-            onPressed: () => counterModel.incrementCounter(),
+            onPressed: () => counterBloc.incrementCounter(),
             tooltip: 'Increment',
             child: Icon(Icons.add),
           ),
           SizedBox(width: 30),
           FloatingActionButton(
             heroTag: "btn2",
-            onPressed: () => counterModel.decrementCounter(),
+            onPressed: () => counterBloc.decrementCounter(),
             tooltip: 'Decrement',
             child: Icon(Icons.remove),
           ),
