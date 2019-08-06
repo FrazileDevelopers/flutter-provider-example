@@ -13,15 +13,15 @@ class AccountBloc with ChangeNotifier {
   getPage() => page;
 
   AccountBloc({this.page}){
-    getResponse(this.page);
+    getData(this.page);
   }
 
-  getResponse(page) async{
+  getData(page) async{
     var url = "https://api.github.com/search/repositories?q=flutter&page=${page}&per_page=20";  
     var response = await http.get(url);
     if (response.statusCode == 200) {
       var jsonResponse = convert.jsonDecode(response.body)['items'];
-      jsonResponse.forEach((i)=>_accountList.add(Account.fromJson(i))).toList();
+      jsonResponse.forEach((i)=>_accountList.add(Account.fromJson(i)));
       _isLoading = false;
     } else {
       print("Request failed with status: ${response.statusCode}.");

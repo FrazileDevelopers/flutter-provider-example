@@ -19,7 +19,7 @@ class ThirdScreen extends StatelessWidget {
                   if (!accountBloc.getLoading()) {
                     accountBloc.setPage(accountBloc.getPage() + 1);
                     accountBloc.setLoading();
-                    accountBloc.getResponse(accountBloc.getPage());
+                    accountBloc.getData(accountBloc.getPage());
                     return true;
                   }
                 }
