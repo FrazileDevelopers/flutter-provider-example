@@ -22,11 +22,10 @@ class AccountBloc with ChangeNotifier {
     if (response.statusCode == 200) {
       var jsonResponse = convert.jsonDecode(response.body)['items'];
       jsonResponse.forEach((i)=>_accountList.add(Account.fromJson(i)));
-      _isLoading = false;
     } else {
       print("Request failed with status: ${response.statusCode}.");
-      _isLoading = false;
     }
+    _isLoading = false;
     notifyListeners();
   }
   void setLoading(){
