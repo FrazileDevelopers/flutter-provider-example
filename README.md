@@ -14,7 +14,7 @@ The Listview using provider
 <br>
 <h2> FourthScreen </h2>
 The Listview using Rxdart, Stream
-I wanted to make loading indicator using just one stream(list stream), but i couldn't do that. 
-if use 'ConnectionState.done', it must close the stream. but, opening and closing stream frequently is not efficient.
-if there is a good way please let me know. 
+I wanted to make loading indicator using just one stream(list stream), but i couldn't do that.<br>
+if use 'ConnectionState.done', it must close the stream. but, opening and closing stream frequently is not efficient.<br>
+if there is a good way please let me know.<br>
 Thanks.
