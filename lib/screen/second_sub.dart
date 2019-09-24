@@ -5,6 +5,6 @@ class SecondSub extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final counterModel = Provider.of<CounterBloc>(context);
-    return Text('SecondSub Counter Value is: ${counterModel.getCounter()}');
+    return Text('SecondSub Counter Value is: ${counterModel.getCounter()}',style: TextStyle(fontSize: 20,color: Colors.red),);
   }
 }

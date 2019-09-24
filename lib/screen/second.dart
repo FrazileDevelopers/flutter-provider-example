@@ -18,8 +18,8 @@ class SecondScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             SecondSub(), //This is sub widget
-            Text('Counter Value is: ${counterBloc.getCounter()}'),   // Also, it is not necessary to separate like SecondSub()
-            Text('Name is : ${nameBloc.getName()}'),
+            Text('Counter Value is: ${counterBloc.getCounter()}', style: TextStyle(fontSize: 30,color: Colors.red),),   // Also, it is not necessary to separate like SecondSub()
+            Text('Name is : ${nameBloc.getName()}',style: TextStyle(fontSize: 30,color: Colors.red),),
             Container(
               margin: EdgeInsets.only(right: 50,left:50),
               child: TextField(
