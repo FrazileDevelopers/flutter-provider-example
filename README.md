@@ -5,12 +5,15 @@ This is for beginners who are starting to study 'Provider', 'Bloc pattern'<br>
 <br><br><br>
 <h2> FirstScreen </h2>
 The simple counter screen using Provider
+<img src="./gif/1.gif">
 <br>
 <h2> SecondScreen </h2>
 The MultiProvider example
+<img src="./gif/2.gif">
 <br>
 <h2> ThirdScreen </h2>
 The Listview using Provider
+<img src="./gif/3.gif">
 <br>
 <h2> FourthScreen </h2>
 The Listview using Rxdart, Stream<br>
@@ -19,5 +22,5 @@ If use 'ConnectionState.done' it must close the stream.<br>
 But, I think opening and closing the stream often is not efficient.<br>
 If there is a good way please let me know.<br>
 Thanks.
-
+<img src="./gif/4.gif">
 
